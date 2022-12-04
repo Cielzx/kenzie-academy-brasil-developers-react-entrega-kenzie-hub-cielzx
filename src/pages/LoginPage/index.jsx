@@ -1,8 +1,6 @@
 import { Formulario } from "../../components/Form";
 import { Principal } from "./style";
-
 import Logo from "../../assets/img/Logo.svg";
-import { Dash } from "../DashBoard";
 
 export const PageLogin = ({ userLogin, logged, setLogged }) => {
   return (

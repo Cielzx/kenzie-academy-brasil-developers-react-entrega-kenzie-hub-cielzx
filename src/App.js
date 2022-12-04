@@ -2,9 +2,6 @@ import { Rout } from "./routes";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { Api } from "./services/api";
-import { toast } from "react-toastify";
-import { PageLogin } from "./pages/LoginPage";
 import { useState } from "react";
 
 function App() {

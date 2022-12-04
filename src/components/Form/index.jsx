@@ -3,8 +3,6 @@ import { FormButton, DivButton } from "../../styles/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { toast } from "react-toastify";
-import { Api } from "../../services/api";
 import { LoginSchema } from "./LoginSchema";
 
 export const Formulario = ({ userLogin }) => {
