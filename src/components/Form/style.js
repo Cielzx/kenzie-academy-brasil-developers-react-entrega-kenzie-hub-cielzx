@@ -20,7 +20,7 @@ export const FormDiv = styled.div`
 
   a {
     text-decoration: none;
-    color: var(--grey-1);
+    color: var(--grey-0);
   }
 
   h4 {
@@ -38,7 +38,7 @@ export const FormDiv = styled.div`
 
   form input {
     width: 100%;
-    height: 30px;
+    height: 35px;
     border-radius: 4px;
     background-color: transparent;
     border: 1px solid white;

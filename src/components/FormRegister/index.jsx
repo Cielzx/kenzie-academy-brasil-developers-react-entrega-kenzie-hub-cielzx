@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
 import { FormButton } from "../../styles/Button";
-import { Api } from "../../services/api";
-import { toast } from "react-toastify";
 import { FormDiv } from "./style";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterSchema } from "./RegisterSchema";
-export const FormReg = ({ userRegister }) => {
+import { UserContext } from "../../Providers/UserContext";
+import { useContext } from "react";
+
+export const FormReg = () => {
+  const { userRegister } = useContext(UserContext);
   const {
     register,
     handleSubmit,

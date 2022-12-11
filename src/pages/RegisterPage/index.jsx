@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { TitleDiv } from "./style";
 import { ButtonStyled } from "../../styles/Button";
 
-export const PageRegister = ({ userRegister }) => {
+export const PageRegister = () => {
   return (
     <PrincipalReg>
       <TitleDiv>
@@ -15,7 +15,7 @@ export const PageRegister = ({ userRegister }) => {
           <Link to="/">Voltar</Link>
         </ButtonStyled>
       </TitleDiv>
-      <FormReg userRegister={userRegister} />
+      <FormReg />
     </PrincipalReg>
   );
 };

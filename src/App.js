@@ -1,24 +1,26 @@
 import { Rout } from "./routes";
 import "./App.css";
-import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { UserContext } from "./Providers/UserContext";
+import { ModalForm } from "./components/ModalForm";
+import { EditModalForm } from "./components/EditForm";
+import { TechProvider } from "./Providers/TechContex";
 
 function App() {
-  const [user, setUser] = useState([]);
+  const { user, setUser, modalIsopen, editIsOpen } = useContext(UserContext);
+
   const [logged, setLogged] = useState(false);
 
   return (
     <div>
-      <Rout
-        logged={logged}
-        user={user}
-        setUser={setUser}
-        setLogged={setLogged}
-      />
+      <Rout logged={logged} />
 
+      {modalIsopen ? <ModalForm /> : null}
+      {editIsOpen ? <EditModalForm /> : null}
       <ToastContainer
-        position="bottom-right"
+        position="top-right"
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}

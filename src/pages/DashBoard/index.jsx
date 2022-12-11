@@ -1,31 +1,40 @@
 import { DashPrincipal } from "../DashBoard/style";
 import { Header } from "../../components/Header";
-import { useParams } from "react-router-dom";
-export const Dash = ({ infos }) => {
-  //   const { id } = useParams();
+import { BsPlusLg } from "react-icons/bs";
+import { DashList } from "../../components/DashBoardList";
+import { useContext } from "react";
+import { UserContext } from "../../Providers/UserContext";
+import { ModalForm } from "../../components/ModalForm";
+import { Navigate } from "react-router-dom";
 
-  //   const filter = infos.filter((el) => el.id === id);
-
-  return (
+export const Dash = () => {
+  const { user, loading, setModalIsOpen } = useContext(UserContext);
+  if (loading) {
+    return null;
+  }
+  return user ? (
     <DashPrincipal>
       <Header />
       <div className="container-text">
         <div>
-          <p>Olá, {infos.name}</p>
+          <p>Olá, {user?.name}</p>
           <p>
-            {infos.course_module}({infos.bio})
+            {user?.course_module}({user?.bio})
           </p>
         </div>
       </div>
 
       <div className="text-warning">
-        <div>
-          <h2>Que pena estamos em desenvolvimento :(</h2>
-          <p>
-            Nossa aplicação está em desenvolvimento, em breve teremos novidades
-          </p>
+        <div className="div-warn">
+          <p>Tecnologias</p>
+          <button onClick={() => setModalIsOpen(true)} className="warn-button">
+            <BsPlusLg />
+          </button>
         </div>
+        <DashList />
       </div>
     </DashPrincipal>
+  ) : (
+    <Navigate to="/" />
   );
 };

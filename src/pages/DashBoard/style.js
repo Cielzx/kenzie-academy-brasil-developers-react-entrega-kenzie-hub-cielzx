@@ -16,8 +16,24 @@ export const DashPrincipal = styled.main`
     color: white;
   }
 
-  .text-warning div {
+  .div-warn {
     width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .warn-button {
+    background-color: transparent;
+    background-color: var(--grey-3);
+    width: 30px;
+    border: none;
+    color: var(--grey-0);
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
 
   .text-warning h2 {
@@ -58,7 +74,7 @@ export const DashPrincipal = styled.main`
     /* text-align: center;*/
 
     .text-warning {
-      display: none;
+      display: flex;
     }
 
     .container-text div {

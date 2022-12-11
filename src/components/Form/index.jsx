@@ -4,8 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginSchema } from "./LoginSchema";
+import { useContext } from "react";
+import { UserContext } from "../../Providers/UserContext";
 
-export const Formulario = ({ userLogin }) => {
+export const Formulario = () => {
+  const { userLogin } = useContext(UserContext);
   const navigate = useNavigate();
   const {
     register,
@@ -30,7 +33,7 @@ export const Formulario = ({ userLogin }) => {
           placeholder="Digite seu email aqui"
           {...register("email")}
         />
-        {errors.email && <span>{errors.email.message}</span>}
+        {errors.email && <p>{errors.email.message}</p>}
 
         <label htmlFor="password">Senha</label>
         <input
@@ -39,14 +42,16 @@ export const Formulario = ({ userLogin }) => {
           placeholder="Digite sua senha aqui"
           {...register("password")}
         />
-        {errors.password && <span>{errors.password.message}</span>}
+        {errors.password && <p>{errors.password.message}</p>}
 
         <FormButton type="Submit">Entrar</FormButton>
       </form>
       <span>
         <Link to={"/register"}>Ainda não possui uma conta?</Link>
       </span>
-      <DivButton onClick={() => navigate("/register")}>Cadastre-se</DivButton>
+      <DivButton>
+        <Link to={"/register"}>Cadastre-se</Link>
+      </DivButton>
     </FormDiv>
   );
 };

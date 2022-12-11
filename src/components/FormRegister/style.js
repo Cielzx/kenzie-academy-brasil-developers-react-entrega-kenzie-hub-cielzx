@@ -12,7 +12,7 @@ export const FormDiv = styled.div`
 
   span {
     color: var(--grey-1);
-    font-size: 12px;
+    font-size: 17px;
   }
 
   h4 {
@@ -30,7 +30,7 @@ export const FormDiv = styled.div`
 
   form input {
     width: 260px;
-    height: 27px;
+    height: 35px;
     border-radius: 4px;
     background-color: transparent;
     border: 1px solid;
@@ -39,7 +39,7 @@ export const FormDiv = styled.div`
 
   form select {
     width: 260px;
-    height: 27px;
+    height: 35px;
     border-radius: 6px;
     background-color: transparent;
     border: 1px solid white;
