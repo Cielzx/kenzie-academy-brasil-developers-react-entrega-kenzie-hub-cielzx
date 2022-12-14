@@ -8,11 +8,12 @@ import { ModalStyled } from "../ModalForm/style";
 
 export const EditModalForm = () => {
   const { register, handleSubmit } = useForm();
-  const { deleteTech, id, updateTech } = useContext(TechContext);
+  const { deleteTech, id, updateTech, title } = useContext(TechContext);
   const { setEditIsOpen } = useContext(UserContext);
 
   const handleDelete = () => {
     deleteTech(id);
+
     setEditIsOpen(false);
   };
 
@@ -30,7 +31,7 @@ export const EditModalForm = () => {
         </div>
         <form action="" onSubmit={handleSubmit(FormSubmit)}>
           <label htmlFor="atividade">Nome do projeto</label>
-          <input type="text" id="material" placeholder="Material UI" />
+          <input type="text" disabled id="material" placeholder={`${title}`} />
 
           <label htmlFor="status">Status</label>
           <select name="" id="status" {...register("status")}>

@@ -23,6 +23,7 @@ export const Provider = ({ children }) => {
       const { data } = await Api.get(`/profile`);
 
       setUser(data);
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     } finally {
@@ -48,7 +49,9 @@ export const Provider = ({ children }) => {
 
       toast.success("Logado com sucesso");
 
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 3000);
     } catch (error) {
       toast.error("Algo deu errado!");
     }
@@ -57,8 +60,12 @@ export const Provider = ({ children }) => {
   const userRegister = async (dataForm) => {
     try {
       const response = await Api.post("/users", dataForm);
+
       toast.success("Usuario criado com sucesso");
-      navigate("/");
+
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 3000);
     } catch (error) {
       toast.error("Algo deu errado");
     }

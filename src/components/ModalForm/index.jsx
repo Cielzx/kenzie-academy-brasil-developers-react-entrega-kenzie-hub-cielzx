@@ -13,7 +13,7 @@ export const ModalForm = () => {
 
   const FormSubmit = (Data) => {
     addTech(Data);
-    // setModalIsOpen(false);
+    setModalIsOpen(false);
   };
 
   return (

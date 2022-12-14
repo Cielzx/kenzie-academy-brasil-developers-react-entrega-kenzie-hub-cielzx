@@ -8,7 +8,7 @@ import { ModalForm } from "./components/ModalForm";
 import { EditModalForm } from "./components/EditForm";
 import { TechProvider } from "./Providers/TechContex";
 
-function App() {
+const App = () => {
   const { user, setUser, modalIsopen, editIsOpen } = useContext(UserContext);
 
   const [logged, setLogged] = useState(false);
@@ -33,6 +33,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;

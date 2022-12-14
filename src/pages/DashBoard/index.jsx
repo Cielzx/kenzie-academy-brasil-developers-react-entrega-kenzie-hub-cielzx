@@ -4,7 +4,6 @@ import { BsPlusLg } from "react-icons/bs";
 import { DashList } from "../../components/DashBoardList";
 import { useContext } from "react";
 import { UserContext } from "../../Providers/UserContext";
-import { ModalForm } from "../../components/ModalForm";
 import { Navigate } from "react-router-dom";
 
 export const Dash = () => {
@@ -12,6 +11,7 @@ export const Dash = () => {
   if (loading) {
     return null;
   }
+
   return user ? (
     <DashPrincipal>
       <Header />
